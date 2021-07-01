@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical"
+  android:padding="12dp"
+  tools:context=".LoginActivity">
+
+  <ImageView
+    android:layout_width="250px"
+    android:layout_height="250px"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginTop="20px"
+    android:src="@mipmap/logo" />
+
+  <com.google.android.material.textfield.TextInputLayout
+    android:id="@+id/til_username"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="80dp">
+
+    <androidx.appcompat.widget.AppCompatEditText
+      android:id="@+id/et_username"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:hint="用户名" />
+  </com.google.android.material.textfield.TextInputLayout>
+
+  <com.google.android.material.textfield.TextInputLayout
+    android:id="@+id/til_password"
+    android:layout_width="match_parent"
+    android:layout_marginTop="6dp"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatEditText
+      android:id="@+id/et_password"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:inputType="textPassword"
+      android:hint="密码" />
+  </com.google.android.material.textfield.TextInputLayout>
+
+  <Button
+    android:id="@+id/btn_login"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:text="登录" />
+
+  <TextView
+    android:id="@+id/tv_register"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:text="注册" />
+
+</LinearLayout>

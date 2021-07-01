@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical"
+  tools:context=".UserInfoActivity">
+
+  <include
+    android:id="@+id/toolbar_layout"
+    layout="@layout/toolbar_com" />
+
+  <TextView
+    android:id="@+id/tv_title"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:text="用户额外信息："
+    android:textSize="18sp" />
+
+  <TextView
+    android:id="@+id/tv_user_info"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:layout_margin="10dp" />
+
+  <View
+    android:layout_width="match_parent"
+    android:layout_height="1dp"
+    android:layout_marginTop="10dp"
+    android:background="#808080" />
+
+  <EditText
+    android:id="@+id/et_user_info_input"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="20dp"
+    android:background="@drawable/bg_edit"
+    android:gravity="left"
+    android:hint="请输入json对象格式的数据，这些数据将会保存用户的extra字段中，保留该字段主要提供给开发者自定义用户的字段，提高拓展性。"
+    android:padding="10dp" />
+</LinearLayout>
