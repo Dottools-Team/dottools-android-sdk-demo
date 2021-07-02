@@ -30,12 +30,18 @@
     android:layout_marginTop="10dp"
     android:background="#808080" />
 
+  <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:text="json格式在本事例中不要改变，可以改变json里面的值，自己进行对接的extra格式可以进行自定义"
+    />
   <EditText
     android:id="@+id/et_user_info_input"
     android:layout_width="match_parent"
     android:layout_height="0dp"
     android:layout_weight="1"
-    android:layout_margin="20dp"
+    android:layout_margin="10dp"
     android:background="@drawable/bg_edit"
     android:gravity="left"
     android:hint="请输入json对象格式的数据，这些数据将会保存用户的extra字段中，保留该字段主要提供给开发者自定义用户的字段，提高拓展性。"

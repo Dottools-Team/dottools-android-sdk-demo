@@ -41,7 +41,7 @@ public class UserInfoActivity extends BaseActivity {
           .subscribe(objectResult -> {
             Toast.makeText(this, "登出成功", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this, LoginActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NO_HISTORY);
             startActivity(intent);
           }, throwable -> {
             Toast.makeText(this, "登出异常", Toast.LENGTH_SHORT).show();
@@ -87,6 +87,7 @@ public class UserInfoActivity extends BaseActivity {
           if (userExtraResult.getCode() == 0) {
             userExtraResult.getData();
             binding.tvUserInfo.setText(gson.toJson(userExtraResult));
+            binding.etUserInfoInput.setText(gson.toJson(userExtraResult));
           } else {
             binding.tvUserInfo.setText(userExtraResult.getMsg());
           }
