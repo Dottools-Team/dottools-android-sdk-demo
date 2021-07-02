@@ -1,5 +1,7 @@
 package com.lem.nicetools.baasdemo.sdk;
 
+import android.text.TextUtils;
+import com.lem.nicetools.baasdemo.base.BaseApp;
 import hu.akarnokd.rxjava3.retrofit.RxJava3CallAdapterFactory;
 import java.io.IOException;
 import okhttp3.Interceptor;
@@ -10,7 +12,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class SDKClient {
-  String BASE_URL = "http://api.dottools.top/api/";
+  String BASE_URL = "http://localhost:9999/";
 
   private Retrofit retrofit;
   private OkHttpClient client;
@@ -32,6 +34,10 @@ public class SDKClient {
             Request.Builder requestBuilder = original.newBuilder()
                 .addHeader("app_key", SDK.key)
                 .addHeader("app_sign", AppSignTool.getAppSign(SDK.secret));
+
+            if (!TextUtils.isEmpty(BaseApp.UserToken)) {
+              requestBuilder.addHeader("user_token", BaseApp.UserToken);
+            }
 
             Request request = requestBuilder.build();
             return chain.proceed(request);

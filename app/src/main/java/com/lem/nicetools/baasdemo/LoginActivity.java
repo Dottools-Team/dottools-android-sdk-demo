@@ -8,6 +8,7 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.snackbar.Snackbar;
 import com.lem.nicetools.baasdemo.base.BaseActivity;
+import com.lem.nicetools.baasdemo.base.BaseApp;
 import com.lem.nicetools.baasdemo.databinding.ActivityLoginBinding;
 import com.lem.nicetools.baasdemo.sdk.SDKClient;
 import com.lem.nicetools.baasdemo.sdk.bean.Result;
@@ -51,6 +52,7 @@ public class LoginActivity extends BaseActivity {
             .subscribe(tokenResult -> {
               if (tokenResult.getCode() == 0) {
                 SnackbarUtil.showShort(binding.btnLogin, "登录成功");
+                BaseApp.UserToken = tokenResult.getData().getToken();
                 startActivity(new Intent(LoginActivity.this, MainActivity.class));
               } else {
                 SnackbarUtil.showShort(binding.btnLogin, tokenResult.getMsg());

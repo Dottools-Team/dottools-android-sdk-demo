@@ -1,6 +1,7 @@
 package com.lem.nicetools.baasdemo.sdk;
 
 import com.lem.nicetools.baasdemo.bean.InfoContent;
+import com.lem.nicetools.baasdemo.bean.UserExtra;
 import com.lem.nicetools.baasdemo.sdk.bean.DatatableBody;
 import com.lem.nicetools.baasdemo.sdk.bean.RegUserInfo;
 import com.lem.nicetools.baasdemo.sdk.bean.Result;
@@ -33,9 +34,22 @@ public interface DottoolsService {
   @POST("app/user/register")
   Single<Result<Object>> register(@Body RegUserInfo body);
 
+  /**
+   * 注销
+   */
+  @POST(" /app/userinfo/logout")
+  Single<Result<Object>> logout();
+
   //// 用户额外信息
 
+  @GET("app/userinfo/extra")
+  Single<Result<UserExtra>> getUserExtra();
 
+  @GET("app/userinfo/extra/{extra_field}")
+  Single<Result<String>> getUserExtra(@Path("extra_field") String field);
+
+  @POST("app/userinfo/extra")
+  Single<Result<String>> postUserExtra(@Body UserExtra userExtra);
 
   //// 远程配置
 

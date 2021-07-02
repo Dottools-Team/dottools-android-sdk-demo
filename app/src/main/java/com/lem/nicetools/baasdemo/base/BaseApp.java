@@ -5,8 +5,10 @@ import com.lem.nicetools.baasdemo.sdk.SDK;
 
 public class BaseApp extends Application {
 
+  public static String UserToken = null;
+
   @Override public void onCreate() {
     super.onCreate();
-    SDK.init("fa169ffc7543ad5f3661e77830d3f3b4oVM", "4c8d566d58659cfdf3a9d2ea8cba0980");
+    SDK.init("e59842aa2d0648cbdcb6809abf7eed1fOP0", "ffc02d1d6fb00a5ee86ae58f1eef4768");
   }
 }
