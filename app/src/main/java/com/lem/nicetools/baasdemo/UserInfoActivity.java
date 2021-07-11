@@ -85,9 +85,13 @@ public class UserInfoActivity extends BaseActivity {
         .observeOn(AndroidSchedulers.mainThread())
         .subscribe(userExtraResult -> {
           if (userExtraResult.getCode() == 0) {
-            userExtraResult.getData();
-            binding.tvUserInfo.setText(gson.toJson(userExtraResult));
-            binding.etUserInfoInput.setText(gson.toJson(userExtraResult));
+            UserExtra extra = userExtraResult.getData();
+            if (extra == null) {
+              binding.tvUserInfo.setText("空");
+            }else {
+              binding.tvUserInfo.setText(gson.toJson(extra));
+              binding.etUserInfoInput.setText(gson.toJson(extra));
+            }
           } else {
             binding.tvUserInfo.setText(userExtraResult.getMsg());
           }

@@ -15,6 +15,7 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 /**
  *
@@ -37,7 +38,7 @@ public interface DottoolsService {
   /**
    * 注销
    */
-  @POST(" /app/userinfo/logout")
+  @POST("app/userinfo/logout")
   Single<Result<Object>> logout();
 
   //// 用户额外信息
@@ -67,4 +68,9 @@ public interface DottoolsService {
 
   @GET("app/datatable/all/{table_name}")
   Single<Result<List<InfoContent>>> getDatatableContent(@Path("table_name") String tableName);
+
+
+  @GET("app/datatable/{table_name}")
+  Single<Result<List<InfoContent>>> getDatatableContent(@Path("table_name") String tableName, @Query("title") String title);
+
 }

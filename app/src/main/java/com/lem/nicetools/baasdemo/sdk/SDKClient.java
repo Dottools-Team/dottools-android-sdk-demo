@@ -12,7 +12,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class SDKClient {
-  String BASE_URL = "http://localhost:9999/";
+  String BASE_URL = "http://api.dottools.top/api/";
 
   private Retrofit retrofit;
   private OkHttpClient client;
